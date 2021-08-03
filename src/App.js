@@ -1,12 +1,15 @@
 
 import './App.css';
 import ECNavBar from './components/ECNavBar';
+import ECItemListContainer from './components/ECItemListContainer';
 
 
 function App() {
   return (
-    <ECNavBar />
-    
+    < >
+      <ECNavBar />
+      <ECItemListContainer usename="John" />
+    </>
   );
 }
 
