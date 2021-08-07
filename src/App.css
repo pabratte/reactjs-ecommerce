@@ -10,3 +10,6 @@
   cursor: pointer;
   color: #212529;
 }
+button.item-count-number[disabled] {
+  color: black;
+}
