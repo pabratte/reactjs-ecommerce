@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/reactjs-ecommerce/static/css/main.0b0b7df7.chunk.css",
-    "main.js": "/reactjs-ecommerce/static/js/main.e1526a4b.chunk.js",
-    "main.js.map": "/reactjs-ecommerce/static/js/main.e1526a4b.chunk.js.map",
-    "runtime-main.js": "/reactjs-ecommerce/static/js/runtime-main.661336d7.js",
-    "runtime-main.js.map": "/reactjs-ecommerce/static/js/runtime-main.661336d7.js.map",
-    "static/js/2.308080fc.chunk.js": "/reactjs-ecommerce/static/js/2.308080fc.chunk.js",
-    "static/js/2.308080fc.chunk.js.map": "/reactjs-ecommerce/static/js/2.308080fc.chunk.js.map",
-    "static/js/3.a614abf9.chunk.js": "/reactjs-ecommerce/static/js/3.a614abf9.chunk.js",
-    "static/js/3.a614abf9.chunk.js.map": "/reactjs-ecommerce/static/js/3.a614abf9.chunk.js.map",
+    "main.css": "/reactjs-ecommerce/static/css/main.927d6a0a.chunk.css",
+    "main.js": "/reactjs-ecommerce/static/js/main.dfa86f4a.chunk.js",
+    "main.js.map": "/reactjs-ecommerce/static/js/main.dfa86f4a.chunk.js.map",
+    "runtime-main.js": "/reactjs-ecommerce/static/js/runtime-main.624255d2.js",
+    "runtime-main.js.map": "/reactjs-ecommerce/static/js/runtime-main.624255d2.js.map",
+    "static/js/2.35b96c97.chunk.js": "/reactjs-ecommerce/static/js/2.35b96c97.chunk.js",
+    "static/js/2.35b96c97.chunk.js.map": "/reactjs-ecommerce/static/js/2.35b96c97.chunk.js.map",
+    "static/js/3.cb68dbd2.chunk.js": "/reactjs-ecommerce/static/js/3.cb68dbd2.chunk.js",
+    "static/js/3.cb68dbd2.chunk.js.map": "/reactjs-ecommerce/static/js/3.cb68dbd2.chunk.js.map",
     "index.html": "/reactjs-ecommerce/index.html",
-    "static/css/main.0b0b7df7.chunk.css.map": "/reactjs-ecommerce/static/css/main.0b0b7df7.chunk.css.map",
-    "static/js/2.308080fc.chunk.js.LICENSE.txt": "/reactjs-ecommerce/static/js/2.308080fc.chunk.js.LICENSE.txt"
+    "static/css/main.927d6a0a.chunk.css.map": "/reactjs-ecommerce/static/css/main.927d6a0a.chunk.css.map",
+    "static/js/2.35b96c97.chunk.js.LICENSE.txt": "/reactjs-ecommerce/static/js/2.35b96c97.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.661336d7.js",
-    "static/js/2.308080fc.chunk.js",
-    "static/css/main.0b0b7df7.chunk.css",
-    "static/js/main.e1526a4b.chunk.js"
+    "static/js/runtime-main.624255d2.js",
+    "static/js/2.35b96c97.chunk.js",
+    "static/css/main.927d6a0a.chunk.css",
+    "static/js/main.dfa86f4a.chunk.js"
   ]
 }
