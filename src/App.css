@@ -13,3 +13,11 @@
 button.item-count-number[disabled] {
   color: black;
 }
+.card img.card-img-top{
+  display: block;
+  max-height:200px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: auto;
+}
