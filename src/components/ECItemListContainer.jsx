@@ -3,6 +3,7 @@ import { Container, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSync } from '@fortawesome/free-solid-svg-icons'
 import  ECItemList  from './ECItemList'
+import ECItemDetailContainer from './ECItemDetailContainer'
 import { getItems } from '../utils/MockAPI'
 
 function ECItemListContainer(props) {
@@ -21,7 +22,12 @@ function ECItemListContainer(props) {
   const onAdd = (name, count) => {
     console.log(`${count} ${name} added to cart`)
   }
-
+  return (
+    <Container>
+      <ECItemDetailContainer itemId="1"></ECItemDetailContainer>
+    </Container>
+  )
+  /*
   if(items === undefined){
       return (
         <Container>
@@ -42,6 +48,7 @@ function ECItemListContainer(props) {
         </Container>
       );
   }
+  */
 }
 
 export default ECItemListContainer;

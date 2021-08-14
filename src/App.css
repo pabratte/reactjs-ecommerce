@@ -13,11 +13,36 @@
 button.item-count-number[disabled] {
   color: black;
 }
-.card img.card-img-top{
+.card img.card-img-top {
   display: block;
   max-height:200px;
   width: auto;
   height: auto;
   padding: 10px;
   margin: auto;
+}
+
+.item-detail {
+  margin-top: 20px;
+  color: #333;
+}
+
+.item-detail-title {
+  margin-bottom: 20px;
+  font-size: 42px;
+}
+
+.item-detail-description {
+  margin-bottom: 20px;
+}
+
+.item-detail-price {
+  margin-bottom: 10px;
+}
+
+.item-detail-img {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
