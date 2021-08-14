@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Alert } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import ECItem from './ECItem';
 
 
