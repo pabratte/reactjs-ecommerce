@@ -1,10 +1,14 @@
 import Nav from 'react-bootstrap/Nav';
-
+import { BrowserRouter, NavLink } from "react-router-dom";
 function ECNavItem(props) {
   return (
-    <Nav.Item>
-      <Nav.Link eventKey={props.title}>{props.title}</Nav.Link>
-    </Nav.Item>
+    <BrowserRouter basename="/category">
+      <Nav.Item>
+        <NavLink to={props.categoryId} activeClassName="active">
+          {props.name}
+        </NavLink>
+      </Nav.Item>
+    </BrowserRouter>
   );
 }
   

@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import ECNavItem from './ECNavItem';
 import ECCartWidget from './ECCartWidget';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { NavbarBrand } from 'react-bootstrap';
+import { getCategories } from '../utils/MockAPI'
 
 function ECNavBar() {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {    
+      getCategories().then(categories => {
+        setCategories(categories)
+      })
+  }, [])
+
   return (
     <Navbar expand="lg">
       <Container>
@@ -14,11 +23,7 @@ function ECNavBar() {
           ReactBuy
         </NavbarBrand>
         <Nav className="me-auto mr-auto">
-          <ECNavItem title="Daily deals" />
-          <ECNavItem title="Electronics" />
-          <ECNavItem title="Home &amp; garden" />
-          <ECNavItem title="Health &amp; beauty" />
-          <ECNavItem title="Sports" />
+          {categories.map((category) => <ECNavItem key={category.id} categoryId={category.id} name={category.name}></ECNavItem>)}
         </Nav>
         <ECCartWidget />
       </Container>
