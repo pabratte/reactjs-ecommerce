@@ -5,7 +5,7 @@ function ECItemDetail(props) {
   return (
     <Row className="item-detail">
         <Col className="col-md-5">
-            <img className="img-responsive item-detail-img" src={props.item.pictureUrl} />
+            <img className="img-responsive item-detail-img" src={props.item.thumbnail} />
         </Col>
     
         <Col className="col-md-6">

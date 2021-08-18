@@ -11,11 +11,11 @@ function ECItemListContainer(props) {
   const [errorMsg, setErrorMsg] = React.useState('')
   const [loading, setLoading] = React.useState(true)
   
-  const params = useParams()
+  let {categoryId} = useParams()
 
   useEffect(() => {
       setLoading(true)
-      getItems(params.categoryId).then(items => {
+      getItems(categoryId).then(items => {
         setLoading(false)
         setItems(items)
       }).catch( err => {
@@ -23,7 +23,7 @@ function ECItemListContainer(props) {
         setItems(null)
         setErrorMsg(err)
       })
-  }, [params.categoryId])
+  }, [categoryId])
 
   const onAdd = (name, count) => {
     console.log(`${count} ${name} added to cart`)

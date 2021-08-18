@@ -2,6 +2,11 @@
   background-color: #CCC;
 }
 
+.navbar-brand a { 
+  text-decoration: none;
+  color: #333;
+}
+
 .nav-item {
   font-size: 12px;
   margin-right: 10px;

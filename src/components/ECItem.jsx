@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 function ECItem(props) {
   return (
@@ -11,7 +12,9 @@ function ECItem(props) {
                     <Card.Text>
                         {props.item.description}
                     </Card.Text>
-                    <Button variant="primary">Add to cart</Button>
+                    <Link to={`/item/${props.item.id}`} className="btn btn-primary">
+                    Add to cart
+                    </Link>
                 </Card.Body>
             </Card>
         </Col>

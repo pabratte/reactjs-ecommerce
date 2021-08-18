@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { NavbarBrand } from 'react-bootstrap';
 import { getCategories } from '../utils/MockAPI'
+import { NavLink } from 'react-router-dom';
 
 function ECNavBar() {
   const [categories, setCategories] = useState([])
@@ -21,7 +22,9 @@ function ECNavBar() {
     <Navbar expand="lg">
       <Container>
         <NavbarBrand>
-          ReactBuy
+          <NavLink to="/">
+            ReactBuy
+          </NavLink>
         </NavbarBrand>
         
         <ECCartWidget />
