@@ -18,8 +18,6 @@ export function getItems(categoryId){
 export function getItem(itemId){
     return axios.get(`https://api.mercadolibre.com/items?ids=${itemId}`)
         .then(response => {
-            console.log("El item es")
-            console.log(response.data[0].body)
             return response.data[0].body
         })
 }
