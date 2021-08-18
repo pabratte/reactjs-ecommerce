@@ -2,13 +2,13 @@ import Nav from 'react-bootstrap/Nav';
 import { BrowserRouter, NavLink } from "react-router-dom";
 function ECNavItem(props) {
   return (
-    <BrowserRouter basename="/category">
+  
       <Nav.Item>
-        <NavLink to={props.categoryId} activeClassName="active">
+        <NavLink to={`/category/${props.categoryId}`}>
           {props.name}
         </NavLink>
       </Nav.Item>
-    </BrowserRouter>
+    
   );
 }
   

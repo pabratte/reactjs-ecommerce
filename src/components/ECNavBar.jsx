@@ -17,17 +17,23 @@ function ECNavBar() {
   }, [])
 
   return (
+    <>
     <Navbar expand="lg">
       <Container>
         <NavbarBrand>
           ReactBuy
         </NavbarBrand>
-        <Nav className="me-auto mr-auto">
-          {categories.map((category) => <ECNavItem key={category.id} categoryId={category.id} name={category.name}></ECNavItem>)}
-        </Nav>
+        
         <ECCartWidget />
+        
       </Container>
     </Navbar>
+    <Container>
+      <Nav className="mt-3">
+        {categories.map((category) => <ECNavItem key={category.id} categoryId={category.id} name={category.name}></ECNavItem>)}
+      </Nav>
+    </Container>
+  </>
   );
 }
 

@@ -2,6 +2,34 @@
   background-color: #CCC;
 }
 
+.nav-item {
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  padding: 2px 3px 2px 3px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-item a.active {
+  font-weight: bold;
+}
+
+.nav-item:hover{
+  background-color: lightblue;
+}
+
+.nav-item:link{
+  text-decoration: none;
+  color: #333;
+}
+
 .cart-widget {
   color: rgba(0, 0, 0, .55);
 }

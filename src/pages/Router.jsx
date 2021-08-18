@@ -1,18 +1,15 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import ECItemListContainer from '../components/ECItemListContainer';
 
 export default function Router(props) {
     console.log(props)
     return (
-        <BrowserRouter >
-            <Switch>
-                <BrowserRouter basename="/category">
-                    <Route path="/:categoryId" component={ECItemListContainer} />
-                </BrowserRouter>
-                <Route path="/">
-                    Base
-                </Route>
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route path="/category/:categoryId" component={ECItemListContainer} />
+              
+            <Route path="/">
+                <Redirect to="/category/MLA5725"></Redirect>
+            </Route>
+        </Switch>
     )
 }
