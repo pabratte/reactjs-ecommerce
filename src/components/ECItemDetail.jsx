@@ -3,7 +3,7 @@ import { Button, Col, Row } from 'react-bootstrap';
 import ECItemCount from './ECItemCount'
 import { useHistory } from 'react-router-dom'
 
-function ECItemDetail(props) {
+function ECItemDetail({item}) {
   const [quantity, setQuantity] = React.useState(1);
   const [showItemCount, setShowItemCount] = React.useState(true);
   const history = useHistory();
@@ -24,13 +24,13 @@ function ECItemDetail(props) {
   return (
     <Row className="item-detail">
         <Col className="col-md-5">
-            <img className="img-responsive item-detail-img" src={props.item.thumbnail} alt={props.item.title} />
+            <img className="img-responsive item-detail-img" src={item.thumbnail} alt={item.title} />
         </Col>
     
         <Col className="col-md-6">
-            <h2 className="item-detail-title">{props.item.title}</h2>
-            <p className="item-detail-description">{props.item.description}</p>
-            <h3 className="item-detail-price">${props.item.price}</h3>
+            <h2 className="item-detail-title">{item.title}</h2>
+            <p className="item-detail-description">{item.description}</p>
+            <h3 className="item-detail-price">${item.price}</h3>
             {
               showItemCount ?
               <ECItemCount initial={quantity} onAdd={onAdd} />

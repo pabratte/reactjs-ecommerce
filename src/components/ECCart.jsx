@@ -1,4 +1,4 @@
-function ECCart(props) {
+function ECCart() {
   return (
         <div>
             Cart Page

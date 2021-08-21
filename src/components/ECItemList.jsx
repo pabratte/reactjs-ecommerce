@@ -3,10 +3,10 @@ import { Row } from 'react-bootstrap';
 import ECItem from './ECItem';
 
 
-function ECItemList(props) {
+function ECItemList({items}) {
     return (
         <Row>
-            {props.items.map((item) => <ECItem key={item.id} item={item}></ECItem>)}
+            {items.map((item) => <ECItem key={item.id} item={item}></ECItem>)}
         </Row>
     );
 }

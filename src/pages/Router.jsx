@@ -3,7 +3,7 @@ import ECItemListContainer from '../components/ECItemListContainer';
 import ECItemDetailContainer from '../components/ECItemDetailContainer';
 import ECCart from '../components/ECCart';
 
-export default function Router(props) {
+export default function Router() {
     return (
         <Switch>
             <Route path="/category/:categoryId" component={ECItemListContainer} />

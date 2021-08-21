@@ -1,11 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
-function ECNavItem(props) {
+function ECNavItem({name, categoryId}) {
   return (
   
       <Nav.Item>
-        <NavLink to={`/category/${props.categoryId}`}>
-          {props.name}
+        <NavLink to={`/category/${categoryId}`}>
+          {name}
         </NavLink>
       </Nav.Item>
     

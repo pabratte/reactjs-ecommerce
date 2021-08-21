@@ -6,7 +6,7 @@ import  ECItemList  from './ECItemList'
 import { getItems } from '../utils/MockAPI'
 import { useParams } from "react-router-dom";
 
-function ECItemListContainer(props) {
+function ECItemListContainer() {
   const [items, setItems] = React.useState(undefined)
   const [errorMsg, setErrorMsg] = React.useState('')
   const [loading, setLoading] = React.useState(true)
