@@ -24,17 +24,12 @@ function ECItemListContainer(props) {
         setErrorMsg(err)
       })
   }, [categoryId])
-
-  const onAdd = (name, count) => {
-    console.log(`${count} ${name} added to cart`)
-  }
-
   
   return (
     <Container>
       { loading && <Alert variant="info" className="mt-3"><FontAwesomeIcon className="fa-spin" icon={faSync} /><span className="m-2">Loading...</span></Alert> }
       { !loading && !items && <Alert variant="danger" className="mt-3"><span className="m-2">An error ocurred: {errorMsg}</span></Alert> }
-      { !loading && items && <ECItemList items={items} onAdd={onAdd} /> }
+      { !loading && items && <ECItemList items={items} /> }
     </Container>
   )
 }

@@ -3,8 +3,8 @@ import { Button, ButtonGroup, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 
-function ECItemCount({ name, stock, initial, onAdd}) {
-    const [count, setCount] = useState(parseInt(initial, 10) || 1);
+function ECItemCount({ onAdd, initial=1, stock=10}) {
+    const [count, setCount] = useState(parseInt(initial, 10));
 
     const minusDisabled = () => count <= 1;
     const plusDisabled = () => count >= stock;
@@ -20,7 +20,7 @@ function ECItemCount({ name, stock, initial, onAdd}) {
                 </ButtonGroup>
             </Row>
             <Row>
-                <Button onClick={ ()=>onAdd(name, count) } disabled={addDisabled()} variant="primary" size="lg">Add to cart</Button>{' '}
+                <Button onClick={ ()=>onAdd(count) } disabled={addDisabled()} variant="primary" size="lg">Add to cart</Button>{' '}
             </Row>
         </Container>
   );
