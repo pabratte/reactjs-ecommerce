@@ -1,13 +1,16 @@
-import React from 'react';
-import Nav from 'react-bootstrap/Nav';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { CartContext }  from '../utils/CartProvider';
 
 function ECCartWidget() {
+  const cart = useContext(CartContext)
+  
   return (
-        <Nav.Item className="cart-widget">
+        <div className="cart-widget">
           <FontAwesomeIcon icon={faShoppingCart} />
-        </Nav.Item>
+          <div className="item-count">{cart.items.length}</div>
+        </div>
   );
 }
 

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, Col, Row } from 'react-bootstrap';
 import ECItemCount from './ECItemCount'
 import { useHistory } from 'react-router-dom'
+import { CartContext }  from '../utils/CartProvider'
 
 function ECItemDetail({item}) {
   const [quantity, setQuantity] = React.useState(1);
   const [showItemCount, setShowItemCount] = React.useState(true);
   const history = useHistory();
+  const cart = useContext(CartContext)
 
   const onAdd = (quantity) => {
     setQuantity(quantity)
@@ -18,6 +20,7 @@ function ECItemDetail({item}) {
   }
 
   const finishShopping = () => {
+    cart.addItem(item)
     history.push('/cart')
   }
 
