@@ -38,6 +38,7 @@
 .cart-widget {
   color: rgba(0, 0, 0, .55);
   text-decoration: none;
+  position: relative;
 }
 
 .cart-widget:hover {
@@ -73,8 +74,8 @@
 }
 
 .cart-widget-item-count {
-  position: relative;
-  top: -30px;
+  position: absolute;
+  top: -8px;
   left: 10px;
   font-size: 11px;
   width: 20px;
