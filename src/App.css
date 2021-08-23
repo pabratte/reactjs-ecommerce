@@ -43,6 +43,34 @@
   cursor: pointer;
   color: #212529;
 }
+
+.cart-empty {
+  text-align: center;
+  font-size: 22px;
+}
+
+.cart-col-quantity, .cart-col-price {
+  text-align: right;
+}
+
+.cart-table-title, .cart-table-total{
+  font-size: 22px;
+  font-weight: bold;
+  background-color: lightgray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.cart-table-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-list-img{
+  max-width: 50px;
+  max-height: 50px;
+}
+
 button.item-count-number[disabled] {
   color: black;
 }
@@ -83,4 +111,8 @@ button.item-count-number[disabled] {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.block-button {
+  width: 100%;
 }

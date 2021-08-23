@@ -20,7 +20,7 @@ function ECItemDetail({item}) {
   }
 
   const finishShopping = () => {
-    cart.addItem(item)
+    cart.addItem(item, quantity)
     history.push('/cart')
   }
 
@@ -40,11 +40,13 @@ function ECItemDetail({item}) {
               :
               <>
                 <Row className="mb-2">
-                  <Button variant="primary" size="lg" onClick={finishShopping}>Go to cart</Button>
-                </Row>
-                <Row>
-                  <Button variant="outline-primary" onClick={onCancel}>Cancel</Button>
-                </Row>
+                  <Col>
+                    <Button className="block-button" variant="primary" size="lg" block onClick={finishShopping}>Go to cart</Button>
+                  </Col>
+                  <Col>
+                    <Button className="block-button" variant="outline-primary" size="lg" onClick={onCancel}>Cancel</Button>
+                  </Col>
+                </Row>           
               </> 
             }
         </Col>
