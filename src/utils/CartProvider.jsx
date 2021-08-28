@@ -6,13 +6,17 @@ export default function CartProvider ({children}) {
     const [items, setItems] = useState([]);
 
     const addItem = (item, quantity) => {
-        const newItems = [...items, 
-            {
-                item: item,
-                quantity: quantity
-            }
-        ];
-        setItems(newItems);
+        if(isInCart(item.id)){
+            updateItem(item.id, quantity)
+        }else{
+            const newItems = [...items, 
+                {
+                    item: item,
+                    quantity: quantity
+                }
+            ]
+            setItems(newItems);
+        }
     }
 
     const removeItem = (itemId) => {
@@ -30,6 +34,25 @@ export default function CartProvider ({children}) {
         return inCart
     }
 
+    const getItem = (itemId) => {
+        let foundItem = undefined
+        items.forEach(item => {
+            if (item.item.id === itemId) {
+                foundItem = item
+            }
+        })
+        return foundItem
+    }
+
+    const updateItem = (itemId, quantity) => {
+        items.forEach((cartItem, index) => {
+            if(cartItem.item.id === itemId) {
+                items[index].quantity = quantity;
+            }
+        })
+        setItems(items)
+    }
+
     const clear = () => {
         setItems([]);
     }
@@ -44,7 +67,7 @@ export default function CartProvider ({children}) {
 
     return (
         <> 
-            <CartContext.Provider value={{items: items, addItem: addItem, removeItem: removeItem, clear: clear, isEmpty: isEmpty, getTotalPrice: getTotalPrice}}>
+            <CartContext.Provider value={{items: items, addItem: addItem, removeItem: removeItem, getItem: getItem, clear: clear, isEmpty: isEmpty, getTotalPrice: getTotalPrice}}>
                 {children}
             </CartContext.Provider>
         </>
