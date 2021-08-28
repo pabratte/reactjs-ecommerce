@@ -38,7 +38,7 @@ function ECCart() {
               <Row>
                 <Col className="cart-table-title">Your items</Col>
               </Row>
-              {cart.items.map(item => <ECCartItem key={item.id} item={item.item} quantity={item.quantity} onRemove={onRemove}/>)}
+              {cart.items.map(item => <ECCartItem key={item.item.id} item={item.item} quantity={item.quantity} onRemove={onRemove}/>)}
               <Row>
                 <Col className="cart-table-total">
                   {`Total: $${cart.getTotalPrice()}`}

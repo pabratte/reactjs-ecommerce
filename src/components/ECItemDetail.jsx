@@ -41,7 +41,7 @@ function ECItemDetail({item}) {
               <>
                 <Row className="mb-2">
                   <Col>
-                    <Button className="block-button" variant="primary" size="lg" block onClick={finishShopping}>Go to cart</Button>
+                    <Button className="block-button" variant="primary" size="lg" onClick={finishShopping}>Go to cart</Button>
                   </Col>
                   <Col>
                     <Button className="block-button" variant="outline-primary" size="lg" onClick={onCancel}>Cancel</Button>
