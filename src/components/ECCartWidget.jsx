@@ -10,7 +10,7 @@ function ECCartWidget() {
   return (
         <Link to="/cart" className="cart-widget">
           <FontAwesomeIcon icon={faShoppingCart} />
-          {cart.items.length>0 && <div class="cart-widget-item-count">{cart.items.length}</div>}
+          {cart.items.length>0 && <div className="cart-widget-item-count">{cart.items.length}</div>}
         </Link>
   );
 }

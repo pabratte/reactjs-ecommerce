@@ -6,20 +6,28 @@ export default function CartProvider ({children}) {
     const [items, setItems] = useState([]);
 
     const addItem = (item, quantity) => {
-        const newItem = {
-            id: item.id,
-            title: item.title,
-            quantity: quantity,
-            price: item.price,
-            thumbnail: item.thumbnail
-        }
-        const newItems = [...items, newItem];
+        const newItems = [...items, 
+            {
+                item: item,
+                quantity: quantity
+            }
+        ];
         setItems(newItems);
     }
 
     const removeItem = (itemId) => {
-        const items = items.filter(item => item.item.id !== itemId);
-        setItems(items);
+        const filteredItems = items.filter(item => item.item.id !== itemId);
+        setItems(filteredItems);
+    }
+
+    const isInCart = (itemId) => {
+        let inCart = false
+        items.forEach(item => {
+            if (item.item.id === itemId) {
+                inCart = true
+            }
+        })
+        return inCart
     }
 
     const clear = () => {
@@ -31,7 +39,7 @@ export default function CartProvider ({children}) {
     }
 
     const getTotalPrice = () => {
-        return items.reduce((accumulator, item) => accumulator + parseInt(item.price)*parseInt(item.quantity), 0)
+        return items.reduce((accumulator, item) => accumulator + parseInt(item.item.price)*parseInt(item.quantity), 0)
     }
 
     return (
