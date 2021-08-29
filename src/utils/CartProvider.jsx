@@ -53,6 +53,14 @@ export default function CartProvider ({children}) {
         setItems(items)
     }
 
+    const getTotalItems = () => {
+        let totalItems = 0
+        items.forEach((cartItem, index) => {
+            totalItems += cartItem.quantity
+        })
+        return totalItems
+    }
+
     const clear = () => {
         setItems([]);
     }
@@ -67,7 +75,7 @@ export default function CartProvider ({children}) {
 
     return (
         <> 
-            <CartContext.Provider value={{items: items, addItem: addItem, removeItem: removeItem, getItem: getItem, clear: clear, isEmpty: isEmpty, getTotalPrice: getTotalPrice}}>
+            <CartContext.Provider value={{items: items, addItem: addItem, removeItem: removeItem, getItem: getItem, clear: clear, isEmpty: isEmpty, getTotalPrice: getTotalPrice, getTotalItems: getTotalItems}}>
                 {children}
             </CartContext.Provider>
         </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import ECNavItem from './ECNavItem';
 import ECCartWidget from './ECCartWidget';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,9 +7,11 @@ import Container from 'react-bootstrap/Container';
 import { NavbarBrand } from 'react-bootstrap';
 import { getCategories } from '../utils/MockAPI'
 import { NavLink } from 'react-router-dom';
+import { CartContext }  from '../utils/CartProvider';
 
 function ECNavBar() {
   const [categories, setCategories] = useState([])
+  const cart = useContext(CartContext)
 
   useEffect(() => {    
       getCategories().then(categories => {
@@ -27,7 +29,7 @@ function ECNavBar() {
           </NavLink>
         </NavbarBrand>
         
-        <ECCartWidget />
+        {cart.getTotalItems()>0 && <ECCartWidget />}
         
       </Container>
     </Navbar>

@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Button, Container, Alert, Row, Col, Modal } from 'react-bootstrap';
 import { CartContext }  from '../utils/CartProvider';
-import { useHistory } from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import ECCartItem from './ECCartItem'
 
 function ECCart() {
@@ -29,10 +29,14 @@ function ECCart() {
     handleClose()
   }
 
+  const goToHome = () => {
+    history.push('/')
+  }
+
   return (
     <>
         <Container className="mt-3">
-            {cart.isEmpty() && <Alert variant="secondary" className="cart-empty">The cart is empty</Alert>}
+            {cart.isEmpty() && <Alert variant="secondary" className="cart-empty"><div>The cart is empty</div><Button variant="primary" onClick={goToHome}>Go shopping!</Button></Alert>}
             {!cart.isEmpty() && 
             <>
               <Row>
