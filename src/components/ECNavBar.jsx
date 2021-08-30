@@ -14,8 +14,8 @@ function ECNavBar() {
   const cart = useContext(CartContext)
 
   useEffect(() => {    
-      getCategories().then(categories => {
-        setCategories(categories)
+      getCategories().then(cats => {
+        setCategories(cats)
       })
   }, [])
 
