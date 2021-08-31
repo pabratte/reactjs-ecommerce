@@ -45,12 +45,12 @@ export default function CartProvider ({children}) {
     }
 
     const updateItem = (itemId, quantity) => {
-        items.forEach((cartItem, index) => {
-            if(cartItem.item.id === itemId) {
-                items[index].quantity = quantity;
+        setItems(items.map((item)=>{
+            if(item.item.id === itemId){
+                item.quantity = quantity   
             }
-        })
-        setItems(items)
+            return item
+        }))
     }
 
     const getTotalItems = () => {
