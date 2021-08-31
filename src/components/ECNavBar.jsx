@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { NavbarBrand } from 'react-bootstrap';
-import { getCategories } from '../utils/MockAPI'
+import { getCategories } from '../utils/API'
 import { NavLink } from 'react-router-dom';
 import { CartContext }  from '../utils/CartProvider';
 

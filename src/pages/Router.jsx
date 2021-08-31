@@ -12,7 +12,7 @@ export default function Router() {
             <Route path="/cart" component={ECCart}/>
             <Route path="/checkout" component={ECCheckout}/>
             <Route path="/">
-                <Redirect to="/category/MLA5725"></Redirect>
+                <Redirect to="/category/1"></Redirect>
             </Route>
         </Switch>
     )

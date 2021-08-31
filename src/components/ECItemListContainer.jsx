@@ -3,7 +3,7 @@ import { Container, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSync } from '@fortawesome/free-solid-svg-icons'
 import  ECItemList  from './ECItemList'
-import { getItems } from '../utils/MockAPI'
+import { getItems } from '../utils/API'
 import { useParams } from "react-router-dom";
 
 function ECItemListContainer() {
