@@ -16,7 +16,7 @@ function ECCart() {
   }
   
   const checkout = () => {
-    history.push('/checkout')
+    history.push('/profile')
   }
 
   const onRemove = (itemId) => {

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, query, where, doc, getDoc, addDoc } from "firebase/firestore"
 
 
 const firebaseConfig = {
@@ -60,6 +60,32 @@ export async function getItem(itemId){
             price: data.price,
             thumbnail: data.thumbnail
         }
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}
+
+export async function saveOrder(user, items){
+    const newOrder = {
+        buyer: user,
+        items: items.map(item => {return {id: item.item.id, title: item.item.title, price: item.item.price, quantity: item.quantity}}),
+        total: items.reduce((accumulator, item) => accumulator + parseInt(item.item.price)*parseInt(item.quantity), 0),
+        date: new Date()
+    }
+    console.log(newOrder)
+    const docRef = await addDoc(collection(db, "orders"), newOrder);
+    return docRef.id
+}
+
+
+
+export async function getOrder(orderId){
+    const docRef = doc(db, "orders", orderId)
+    const docSnap = await getDoc(docRef)
+    if (docSnap.exists()) {
+        const data = docSnap.data()
+        return data
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
