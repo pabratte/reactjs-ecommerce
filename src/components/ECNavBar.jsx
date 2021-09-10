@@ -8,6 +8,7 @@ import { NavbarBrand } from 'react-bootstrap';
 import { getCategories } from '../utils/API'
 import { NavLink } from 'react-router-dom';
 import { CartContext }  from '../utils/CartProvider';
+import mimitos_logo from '../assets/mimitos_logo.png'
 
 function ECNavBar() {
   const [categories, setCategories] = useState([])
@@ -21,11 +22,12 @@ function ECNavBar() {
 
   return (
     <>
-    <Navbar expand="lg">
+    <Navbar expand="lg" className="mimitos-navbar">
       <Container>
         <NavbarBrand>
           <NavLink to="/">
-            ReactBuy
+            <img src={mimitos_logo} className="main-logo"/>
+            mimitos
           </NavLink>
         </NavbarBrand>
         
