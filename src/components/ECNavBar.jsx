@@ -26,20 +26,16 @@ function ECNavBar() {
       <Container>
         <NavbarBrand>
           <NavLink to="/">
-            <img src={mimitos_logo} className="main-logo"/>
             mimitos
           </NavLink>
         </NavbarBrand>
-        
+        <Nav className="me-auto">
+          {categories.map((category) => <ECNavItem key={category.id} categoryId={category.id} name={category.name}></ECNavItem>)}
+        </Nav>
         {cart.getTotalItems()>0 && <ECCartWidget />}
         
       </Container>
     </Navbar>
-    <Container>
-      <Nav className="mt-3">
-        {categories.map((category) => <ECNavItem key={category.id} categoryId={category.id} name={category.name}></ECNavItem>)}
-      </Nav>
-    </Container>
   </>
   );
 }

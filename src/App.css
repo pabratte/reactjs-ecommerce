@@ -1,64 +1,58 @@
+:root {
+  --primary: #ff8a00;
+  --secondary: #fbf8ef;
+}
+
+
 .body {
   background-color: red;
 }
+
+/************ begin: navbar ************/
 .navbar {
-  background-color: #ff8a00;
-  color: #fbf8ef;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.navbar .nav-link a{
+  color: var(--secondary);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.navbar .nav-link a.active{
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-brand a { 
   text-decoration: none;
-  color: #fbf8ef;
+  color: var(--secondary);
   font-weight: bold;
 }
 
 .navbar-brand a img {
-  height: 30px;
-}
-
-.nav-item {
-  font-size: 12px;
-  margin-right: 10px;
-  margin-bottom: 3px;
-  padding: 2px 3px 2px 3px;
-  background-color: lightgrey;
-  border-radius: 5px;
-  
-}
-
-.nav-item a{
-  text-decoration: none;
-  color: #333;
-}
-
-.nav-item a.active {
-  font-weight: bold;
-}
-
-.nav-item:hover{
-  background-color: lightblue;
-}
-
-.nav-item:link{
-  text-decoration: none;
-  color: #333;
+  height: 40px;
+  margin: 10px;
 }
 
 .cart-widget {
-  color: rgba(0, 0, 0, .55);
+  color: var(--secondary);
   text-decoration: none;
   position: relative;
 }
 
 .cart-widget:hover {
   cursor: pointer;
-  color: #212529;
+  color: var(--secondary);
 }
 
 .cart-empty {
   text-align: center;
   font-size: 22px;
 }
+
+/************ end: navbar ************/
 
 .cart-col-quantity, .cart-col-price {
   text-align: right;
@@ -104,19 +98,9 @@
 button.item-count-number[disabled] {
   color: black;
 }
-.card img.card-img-top {
-  display: block;
-  max-height:100px;
-  width: auto;
-  height: auto;
-  padding: 10px;
-  margin: auto;
-}
 
-.item-card-title {
-  font-size: 18px;
-  min-height: 150px;
-}
+
+
 
 .item-detail {
   margin-top: 20px;
@@ -146,3 +130,61 @@ button.item-count-number[disabled] {
 .block-button {
   width: 100%;
 }
+
+/************ begin: item card ************/
+.item-card{
+  opacity: 0.8;
+}
+
+.item-card:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.item-card .title {
+  font-size: 14px;
+  color: #333;
+}
+
+.item-card .price {
+  font-size: 12px;
+  color: #666;
+}
+
+.item-card .thumbnail-wrapper{
+  height: 120px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.item-card .thumbnail-wrapper img{
+  height: 100%;
+  width: auto;
+  transition: all 0.1s;
+}
+
+.item-card:hover .thumbnail-wrapper img{
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+
+
+/************ end: item card ************/
+
+/************ begin: footer ************/
+.footer {
+  background-color: var(--secondary);
+  color: var(--primary);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer .social-icon {
+  color: var(--primary);
+  font-size: 20px;
+  margin: 5px;
+}
+/************ end: footer ************/

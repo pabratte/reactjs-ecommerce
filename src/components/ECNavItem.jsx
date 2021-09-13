@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 function ECNavItem({name, categoryId}) {
   return (
   
-      <Nav.Item>
+      <Nav.Link>
         <NavLink to={`/category/${categoryId}`}>
           {name}
         </NavLink>
-      </Nav.Item>
+      </Nav.Link>
     
   );
 }

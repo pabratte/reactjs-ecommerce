@@ -1,13 +1,15 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import ECItem from './ECItem';
+import ItemCard from './ItemCard';
 
 
 function ECItemList({items}) {
     return (
+        <>
         <Row>
-            {items.map((item) => <ECItem key={item.id} item={item}></ECItem>)}
+            {items.map((item) => <ItemCard key={item.id} item={item}></ItemCard>)}
         </Row>
+        </>
     );
 }
 
