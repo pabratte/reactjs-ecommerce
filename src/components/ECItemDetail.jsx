@@ -26,11 +26,15 @@ function ECItemDetail({item}) {
 
   return (
     <Row className="item-detail">
-        <Col className="col-md-5">
+        <Col className="col-md-7">
             <img className="img-responsive item-detail-img" src={item.thumbnail} alt={item.title} />
         </Col>
-    
-        <Col className="col-md-6">
+
+        <Col className="col-md-1">
+            
+        </Col>
+
+        <Col className="col-md-4">
             <h2 className="item-detail-title">{item.title}</h2>
             <p className="item-detail-description">{item.description}</p>
             <h3 className="item-detail-price">${item.price}</h3>

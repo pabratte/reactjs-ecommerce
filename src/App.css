@@ -59,6 +59,7 @@ body {
 .section-title {
   font-size: 24px;
   padding-left: 10px;
+  color: #444;
 }
 
 .cart-col-quantity, .cart-col-price {
