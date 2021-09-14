@@ -4,9 +4,12 @@
 }
 
 
-.body {
-  background-color: red;
+body {
+  background-color: var(--secondary);
+  font-family: 'Spinnaker', sans-serif !important;
 }
+
+
 
 /************ begin: navbar ************/
 .navbar {
@@ -180,6 +183,16 @@ button.item-count-number[disabled] {
   width: 100%;
   font-size: 12px;
   text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.footer .col-left {
+  text-align: left;
+}
+
+.footer .col-right {
+  text-align: right;
 }
 
 .footer .social-icon {
