@@ -17,16 +17,24 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const db = getFirestore()
 
+const categories = []
+
 export async function getCategories(){
-    const querySnapshot = await getDocs(collection(db, "categories"))
-    let categories = []
-    querySnapshot.forEach((doc) => {
-        categories.push({id: doc.id, name: doc.data().name})
-    })
+    if(categories.length === 0){
+        const querySnapshot = await getDocs(collection(db, "categories"))
+        querySnapshot.forEach((doc) => {
+            categories.push({id: doc.id, name: doc.data().name})
+        })
+    }
     return categories
 }
 
-export async function getItems(categoryId){
+function getCategoryName(categoryId){
+    let cat = categories.filter((cat) => cat.id === categoryId)[0]
+    return cat?cat.name:''
+}
+
+export async function getItemsByCategory(categoryId){
     const itemsRef = collection(db, "items")
     const q = query(itemsRef, where("category", "==", parseInt(categoryId)))
     const querySnapshot = await getDocs(q)
@@ -43,7 +51,7 @@ export async function getItems(categoryId){
             }
         )
     })
-    return items
+    return {title: getCategoryName(categoryId), items: items}
 }
 
 export async function getItem(itemId){
