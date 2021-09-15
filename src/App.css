@@ -9,6 +9,19 @@ body {
   font-family: 'Spinnaker', sans-serif !important;
 }
 
+.button-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 10px;
+}
+
+.button-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--secondary);
+  opacity: 0.8;
+}
 
 
 /************ begin: navbar ************/

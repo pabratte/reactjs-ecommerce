@@ -20,7 +20,7 @@ function ECItemCount({ onAdd, initial=1, stock=10}) {
                 </ButtonGroup>
             </Row>
             <Row>
-                <Button onClick={ ()=>onAdd(count) } disabled={addDisabled()} variant="primary" size="lg">Add to cart</Button>{' '}
+                <Button onClick={ ()=>onAdd(count) } disabled={addDisabled()} variant="primary" size="lg" className="button-primary">Agregar al carrito</Button>{' '}
             </Row>
         </Container>
   );

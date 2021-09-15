@@ -26,7 +26,7 @@ function ECItemDetailContainer() {
 
   return (
     <Container>
-      { loading && <Alert variant="info" className="mt-3"><FontAwesomeIcon className="fa-spin" icon={faSync} /><span className="m-2">Loading...</span></Alert> }
+      { loading && <Alert variant="info" className="mt-3"><FontAwesomeIcon className="fa-spin" icon={faSync} /><span className="m-2">Cargando...</span></Alert> }
       { !loading && !item && <Alert variant="danger" className="mt-3"><span className="m-2">An error ocurred: {errorMsg}</span></Alert> }
       { !loading && item && <ECItemDetail item={item}></ECItemDetail> }
     </Container>
