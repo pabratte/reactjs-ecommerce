@@ -3,7 +3,6 @@
   --secondary: #fbf8ef;
 }
 
-
 body {
   background-color: var(--secondary);
   font-family: 'Spinnaker', sans-serif !important;
@@ -69,6 +68,12 @@ body {
 }
 
 /************ end: navbar ************/
+
+.section-title {
+  font-size: 24px;
+  padding-left: 10px;
+  color: #444;
+}
 
 .cart-col-quantity, .cart-col-price {
   text-align: right;
@@ -212,5 +217,12 @@ button.item-count-number[disabled] {
   color: var(--primary);
   font-size: 20px;
   margin: 5px;
+  margin-left: 20px;
 }
+
+.footer .social-icon:hover {
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
 /************ end: footer ************/
