@@ -1,3 +1,5 @@
+/************ begin: global styles ************/
+
 :root {
   --primary: #ff8a00;
   --secondary: #fbf8ef;
@@ -8,11 +10,27 @@ body {
   font-family: 'Spinnaker', sans-serif !important;
 }
 
-.button-primary {
+.section-title {
+  font-size: 24px;
+  padding-left: 10px;
+  color: #444;
+}
+
+
+.button-primary, .button-primary:focus {
   background-color: var(--primary);
   border-color: var(--primary);
   color: var(--secondary);
-  border-radius: 10px;
+  border-radius: 100px;
+}
+
+.button-primary:focus {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.button-primary:disabled {
+  color: var(--secondary);
+  opacity: 0.5;
 }
 
 .button-primary:hover {
@@ -21,6 +39,34 @@ body {
   color: var(--secondary);
   opacity: 0.8;
 }
+
+
+
+.button-secondary, .button-secondary:focus {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 100px;
+  border: 1px solid var(--primary);
+}
+
+.button-secondary:focus {
+  box-shadow: 0 0 0 2px var(--secondary);
+}
+
+.button-secondary:disabled {
+  color: var(--primary);
+  opacity: 0.5;
+}
+
+.button-secondary:hover {
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+/************ end: global styles ************/
 
 
 /************ begin: navbar ************/
@@ -62,18 +108,14 @@ body {
   color: var(--secondary);
 }
 
+/************ end: navbar ************/
+
 .cart-empty {
   text-align: center;
   font-size: 22px;
 }
 
-/************ end: navbar ************/
 
-.section-title {
-  font-size: 24px;
-  padding-left: 10px;
-  color: #444;
-}
 
 .cart-col-quantity, .cart-col-price {
   text-align: right;
@@ -116,37 +158,40 @@ body {
 
 
 
-button.item-count-number[disabled] {
-  color: black;
-}
-
-
-
-
-.item-detail {
-  margin-top: 20px;
+/************ begin: item detail ************/
+.item-count .count[disabled] {
   color: #333;
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+  border-left: 0px;
+  border-right: 0px;
+  font-weight: bold;
 }
 
-.item-detail-title {
-  margin-bottom: 20px;
-  font-size: 42px;
+
+.item-count .plus-button {
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: 0px 100px 100px 0px !important;
+  border: 1px solid var(--primary);
 }
 
-.item-detail-description {
-  margin-bottom: 20px;
+.item-count .minus-button {
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: 100px 0px 0px 100px !important;
+  border: 1px solid var(--primary);
 }
 
-.item-detail-price {
-  margin-bottom: 10px;
+.plus-button:focus, .minus-button:focus {
+  box-shadow: 0px 0px 0px 0px ;
 }
 
-.item-detail-img {
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+/************ end: item detail ************/
+
+
+
+
 
 .block-button {
   width: 100%;
@@ -191,6 +236,39 @@ button.item-count-number[disabled] {
 
 
 /************ end: item card ************/
+
+
+/************ end: item detail ************/
+.item-detail {
+  margin-top: 20px;
+  color: #444;
+}
+
+.item-detail .title {
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.item-detail .description {
+  margin-bottom: 20px;
+}
+
+.item-detail .price {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.item-detail .img {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.item-detail .thumbnail {
+  cursor: pointer;
+}
+
+/************ end: item detail ************/
 
 /************ begin: footer ************/
 .footer {

@@ -29,7 +29,7 @@ function ECItemListContainer() {
     <Container style={{padding: 0}}>
       { loading && <Alert variant="info" className="mt-3"><FontAwesomeIcon className="fa-spin" icon={faSync} /><span className="m-2">Cargando...</span></Alert> }
       { !loading && !items && <Alert variant="danger" className="mt-3"><span className="m-2">An error ocurred: {errorMsg}</span></Alert> }
-      { !loading && items && items.length === 0 && <Alert variant="info" className="mt-3"><span className="m-2">It seems there are no items in this category</span></Alert> }
+      { !loading && items && items.length === 0 && <Alert variant="info" className="mt-3"><span className="m-2">Parece que no hay nada en esta categoría...</span></Alert> }
       { !loading && items && <><h3 className="section-title">{items.title}</h3><ECItemList items={items.items} /></> }
     </Container>
   )

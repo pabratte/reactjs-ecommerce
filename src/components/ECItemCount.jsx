@@ -11,12 +11,12 @@ function ECItemCount({ onAdd, initial=1, stock=10}) {
     const addDisabled = () => count > stock;
 
     return (
-        <Container>
+        <Container className="item-count">
             <Row className="mb-2">
                 <ButtonGroup className="m-0 p-0" size="sm">
-                    <Button onClick={() => setCount(count - 1)} variant="outline-primary" disabled={minusDisabled()} className="col-2"><FontAwesomeIcon icon={faMinus} /></Button>{' '}
-                    <Button variant="outline-primary" className="col-10 item-count-number" disabled>{count}</Button>{' '}
-                    <Button onClick={() => setCount(count + 1)} variant="outline-primary" disabled={plusDisabled()} className="col-2"><FontAwesomeIcon icon={faPlus} /></Button>{' '}
+                    <Button onClick={() => setCount(count - 1)} className="col-md-2 button-primary minus-button" disabled={minusDisabled()}><FontAwesomeIcon icon={faMinus} /></Button>{' '}
+                    <Button variant="outline-primary" className="col-10 count" disabled>{count}</Button>{' '}
+                    <Button onClick={() => setCount(count + 1)} className="col-md-2 button-primary plus-button" disabled={plusDisabled()}><FontAwesomeIcon icon={faPlus} /></Button>{' '}
                 </ButtonGroup>
             </Row>
             <Row>
