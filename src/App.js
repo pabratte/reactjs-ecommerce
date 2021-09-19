@@ -1,6 +1,7 @@
 
 import './App.css';
 import React from 'react';
+import { Container } from 'react-bootstrap'
 import ECNavBar from './components/ECNavBar';
 import Router from './pages/Router'
 import {BrowserRouter} from 'react-router-dom';
@@ -12,8 +13,9 @@ function App() {
     <CartProvider>
       <BrowserRouter >
         <ECNavBar />
-        <br/>
-        <Router />
+          <Container className="main-container">
+            <Router />
+          </Container>
         <Footer />
       </BrowserRouter>
     </CartProvider>

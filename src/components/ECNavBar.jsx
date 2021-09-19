@@ -23,7 +23,7 @@ function ECNavBar() {
   return (
     <>
     <Navbar expand="lg" className="mimitos-navbar">
-      <Container>
+      <Container className="navbar-container">
         <NavbarBrand>
           <NavLink to="/">
             mimitos

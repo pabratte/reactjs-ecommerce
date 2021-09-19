@@ -6,7 +6,7 @@ import ItemCard from './ItemCard';
 function ECItemList({items}) {
     return (
         <>
-        <Row>
+        <Row className="g-0">
             {items.map((item) => <ItemCard key={item.id} item={item}></ItemCard>)}
         </Row>
         </>
