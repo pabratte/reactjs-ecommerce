@@ -23,7 +23,6 @@ export default function Profile () {
         return re.test(String(phoneNumber).toLowerCase());
     }
 
-
     const validate = () => {
         let errors = {}
         if (name == '') errors.name = 'Por favor ingrese su nombre'
@@ -45,8 +44,11 @@ export default function Profile () {
         })
         .catch( err => {
             console.log(`Error generating new order: ${err}`)
-        })
-        
+        })   
+    }
+
+    const backToCart = () => {
+        history.push(`/cart`)
     }
 
     return (
@@ -78,6 +80,9 @@ export default function Profile () {
                 </Form.Group>
 
                 <Form.Group className="mb-3 d-flex justify-content-end">
+                    <Button className="button-secondary btn-lg mx-2" type="button" onClick={backToCart}>
+                        Volver
+                    </Button>
                     <Button className="button-primary btn-lg" type="submit">
                         Finalizar
                     </Button>
