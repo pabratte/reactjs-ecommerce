@@ -317,3 +317,8 @@ body {
 }
 
 /************ end: footer ************/
+
+.form-error-label{
+  color: red;
+  font-size: 12px;
+}
