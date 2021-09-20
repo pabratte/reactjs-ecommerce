@@ -223,6 +223,7 @@ body {
 .item-card .title {
   font-size: 14px;
   color: #333;
+  min-height: 40px;
 }
 
 .item-card .price {
