@@ -23,15 +23,19 @@ export async function getCategories(){
     if(categories.length === 0){
         const querySnapshot = await getDocs(collection(db, "categories"))
         querySnapshot.forEach((doc) => {
-            categories.push({id: doc.id, name: doc.data().name})
+            categories.push({id: doc.id, name: capitalize(doc.data().name)})
         })
     }
     return categories
 }
 
+function capitalize(string){
+    return string[0].toUpperCase() + string.substring(1)
+}
+
 function getCategoryName(categoryId){
     let cat = categories.filter((cat) => cat.id === categoryId)[0]
-    return cat?cat.name:''
+    return cat?capitalize(cat.name):''
 }
 
 export async function getItemsByCategory(categoryId){

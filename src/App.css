@@ -322,3 +322,12 @@ body {
   color: red;
   font-size: 12px;
 }
+
+.align-right {
+  text-align: right;
+}
+
+.order-id {
+  font-size: 14px;
+  color: #666;
+}

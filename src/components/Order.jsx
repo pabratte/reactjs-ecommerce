@@ -28,40 +28,41 @@ export default function Order () {
       })
     }, [orderId])
     return (
-        <Container className="mt-3">
+        <>
+        
             { loading && <Alert variant="info" className="mt-3"><FontAwesomeIcon className="fa-spin" icon={faSync} /><span className="m-2">Cargando...</span></Alert> }
             { !loading && !order && <Alert variant="danger" className="mt-3"><span className="m-2">An error ocurred: {errorMsg}</span></Alert> }
             { !loading && order &&
                 <>
-                    <h1>Your order is ready!</h1>
-                    <h4>Order Code: {orderId}</h4>
+                    <h3>Su compra está lista</h3>
                     <Table >
                         <thead>
                             <tr>
-                                <th>Item</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>Producto</th>
+                                <th>Precio unitario</th>
+                                <th>Cantidad</th>
+                                <th className="align-right">Total</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {order.items.map((item) => <tr><td>{item.title}</td><td>{item.price}</td><td>{item.quantity}</td><td>${parseInt(item.price)*parseInt(item.quantity)}</td></tr>)}
+                            {order.items.map((item) => <tr><td>{item.title}</td><td>${item.price}</td><td>{item.quantity}</td><td className="align-right">${parseInt(item.price)*parseInt(item.quantity)}</td></tr>)}
                             <tr><th colspan="4"></th></tr>
                             <tr>
                                 <th colspan="3">Total</th>
             
             
-                                <th>${order.total}</th>
+                                <th className="align-right">${order.total}</th>
                             </tr>
                         </tbody>
                     </Table>
-
+                    <p className="order-id">Código de orden: {orderId}</p>
                     
-                    
-                    <Button onClick={onContinueShopping}>Continue shopping</Button>
+                    <div className="d-flex justify-content-end">
+                    <Button className="button-primary btn-lg" onClick={onContinueShopping}>Volver a la página principal</Button>
+                    </div>
                 </>
             }
 
-        </Container>
+        </>
     )
 }
